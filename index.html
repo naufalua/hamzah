@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-UA-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio hamzah</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Muhamad Hamzah F.</a>
+
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#portofolio">Portofolio</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-content">
+            <img src="gambar/hamzah1.png" />
+            <h1>Muhammad Hamzah F.</h1>
+            <h3>Programmer | Design Grafis | Photographer</h3>
+            <p>
+                Halo teman, Nama saya hamzah. Programmer dan menyukai bidang
+                teknologi.
+            </p>
+        </div>
+    </section>
+
+    <div class="profile" id="profile">
+        <h2>PROFILE</h2>
+        <p>
+            Nama saya Muhammad Hamzah F. Saya adalah seorang yang berpengalaman,
+            dengan fokus pada pengembangan karya visual yang estetis dan fungsional.
+            Selama bertahun-tahun, saya telah bekerja dengan berbagai klien dan
+            perusahaan untuk menciptakan solusi desain yang memukau, mulai dari
+            branding perusahaan hingga desain digital untuk kampanye pemasaran.
+            Dengan latar belakang yang kuat dalam desain visual dan pemahaman
+            mendalam tentang tren desain modern, saya berkomitmen untuk terus
+            berkembang dan beradaptasi dengan teknologi terbaru.
+        </p>
+        <p>
+            Sebagai seseorang yang terbuka terhadap perubahan dan inovasi, saya
+            selalu mengejar keterampilan baru, termasuk di bidang desain berbasis AI
+            dan pengalaman pengguna. Dengan mata yang tajam untuk detail dan
+            pendekatan yang berorientasi pada hasil, saya berusaha untuk selalu
+            memberikan hasil yang tidak hanya memenuhi ekspektasi klien tetapi juga
+            mampu memberikan dampak yang lebih luas dalam pasar yang kompetitif.
+        </p>
+    </div>
+
+    <div class="social-media">
+        <a href="https://facebook.com" target="_blank">
+            <img src="gambar/fb.png" alt="Facebook" />
+        </a>
+        <a href="https://wa.me/6281219734562" target="_blank">
+            <img src="gambar/wa.png" alt="Whatsapp" />
+        </a>
+        <a href="https://www.instagram.com/mnfl_az/" target="_blank">
+            <img src="gambar/ig.png" alt="Instagram" />
+        </a>
+    </div>
+
+    <div class="portofolio" id="portofolio">
+        <h1 class="judul">Projek Saya</h1>
+        <div class="container">
+            <img src="gambar/zah.jpeg" class="" class="" width="300" height="300" />
+            <p>
+                gambar disamping adalah projek yang saya kembangkan saat ini. Saya
+                mencoba mendesain logo yang persis seperti gambar disamping
+            </p>
+            <p><a href=""></a></p>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <h1>Contact Me</h1>
+        <form class="kontak" onsubmit="sendEmail(event); return false;">
+            <div class="client">
+                <input type="text" id="name" placeholder="Nama" required />
+                <input type="email" id="email" placeholder="Email" required />
+                <input type="text" id="phone" placeholder="No.Telp" required />
+            </div>
+            <div class="pesan">
+                <textarea id="message" name="message" rows="5" placeholder="Pesan" required></textarea>
+            </div>
+            <div class="buttom">
+                <input type="submit" value="Kirim Pesan" name="kirim" />
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("D6D_s5PBbd2cxlZn4");
+        })();
+
+        function sendEmail(event) {
+            event.preventDefault();
+
+            emailjs.send("service_tk40umj", "template_489vkhg", {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            })
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert("Pesan terkirim!");
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    alert("Terjadi kesalahan, coba lagi.");
+                });
+        }
+    </script>
+
+</body>
+
+</html>
