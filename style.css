@@ -113,18 +113,17 @@ body {
     justify-content: center;
     display: flex;
     padding-top: 50px;
-    margin-top: 0px;
+    margin-top: 30px;
     color: rgb(12, 171, 245);
 }
 
 
 .portofolio .container {
-    justify-content: center;
+    justify-items: center;
     margin-left: 300px;
     margin-right: 300px;
-    margin-top: 60px;
+    margin-top: 40px;
     line-height: 2;
-    display: grid;
     grid-template-columns: auto auto; /* Dua kolom */
     gap: 10px;
 }
